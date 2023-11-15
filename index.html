@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <title>Máy tính tuổi thông minh</title>
+</head>
+<style>
+    body {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        margin: 0;
+    }
+
+    .container {
+        max-width: 400px;
+    }
+
+    .tinhtuoiall {
+        margin-top: 20px;
+    }
+</style>
+<body>
+    <script>
+        function tinhtuoi() {
+            var tuoinhap = document.getElementById("ageinput").value;
+        
+            if(tuoinhap==""){
+                document.getElementById("vungchua").innerHTML = '<div class="alert alert-danger">Ai cho để rỗng</div>'
+            }else if(tuoinhap<=0){
+                document.getElementById("vungchua").innerHTML = '<div class="alert alert-danger">Chưa đẻ mà đòi điền à?</div>'
+            }else if(tuoinhap<=100){
+                document.getElementById("vungchua").innerHTML = '<div class="alert alert-success">Tuổi của Huyền là: '+ tuoinhap+'</div>'
+            } else {
+                document.getElementById("vungchua").innerHTML = '<div class="alert alert-danger">CC gì v ?</div>';
+            }
+        }</script>
+        
+
+        <div class="container">
+            <h1 class="text-center">Máy tính tuổi thông minh</h1>
+            <div class="form-group">
+                <label for="usr">Mời nhập tuổi của Huyền: </label>
+                <input type="number" class="form-control" id="ageinput">
+            </div>
+            <div class="tinhtuoiall text-center">
+                <button type="button" class="btn btn-success" onclick="tinhtuoi()">Tính Tuổi</button>
+            </div>
+            <div id="vungchua" class="text-center"></div>
+        </div>
+</body>
+</html>
